@@ -1,0 +1,559 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1')
+    title A Unified Styling Language
+
+  body
+
+    article
+      section
+
+      section
+        .avatar
+
+      section(data-bespoke-backdrop='static react')
+
+      section
+        h2 CSS Modules
+
+      section
+        h1 CSS-in-JS
+
+      section
+        h2 &ldquo;Just learn CSS&rdquo;
+
+      section
+        h2 Misunderstood<br /><br />communities
+
+      section
+        h2 Component systems
+        h3 +
+        h2 Progresive enhancement
+        h3 +
+        h2 Responsive design
+
+      section(data-bespoke-backdrop='houston-video')
+        video(src=require('./videos/houston-minus-js.m4v'), width='100%', height='100%', autoplay=true, loop=true)
+
+      section
+        h2 I&rsquo;m very interested<br /><br />in CSS-in-JS
+
+      section
+        h2 I think you<br /><br />should be too
+
+      section
+        h2 But Why?
+
+      section
+        ul
+          li Scoped styles
+          li Critical CSS
+          li Smarter optimisations
+          li Package management
+          li Non-browser styling
+
+      section
+        h3 1.
+        h2 Scoped Styles
+
+      section
+        h2 Managing CSS at scale
+
+      section
+        h2 The hardest problem<br /><br />in front-end
+
+      section(data-bespoke-backdrop='nicolesullivan')
+        h2 OOCSS
+        h3 &mdash; by Nicole Sullivan &mdash;
+
+      section(data-bespoke-backdrop='jonathansnook')
+        h2 SMACSS
+        h3 &mdash; by Jonathan Snook &mdash;
+
+      section(data-bespoke-backdrop='yandex')
+        h2 BEM
+        h3 &mdash; from Yandex &mdash;
+
+      section(data-bespoke-backdrop='necolas')
+        h2 SUIT
+        h3 &mdash; by Nicolas Gallagher &mdash;
+
+      section
+        code
+          pre.
+            .Block__element--modifier
+
+      section
+        h2 Convention
+
+      section
+        h2 👍
+
+      section
+        h2 Convention?
+
+      section
+        h2 BEM Blocks
+        h3 &mdash; are essentially &mdash;
+        h2 Components
+
+      section
+        h2 Components
+        h3 &mdash; are defined in &mdash;
+        h2 JavaScript
+
+      section(data-bespoke-backdrop='sunilpai')
+        h2 Glamor
+        h3 &mdash; by Sunil Pai &mdash;
+
+      section
+        code
+          pre.
+            import { css } from 'glamor'
+
+            css({
+              fontFamily: 'Comic Sans MS',
+              color: 'blue'
+            })
+
+            // → 'ax6tE'
+
+      section
+        h2 Hashed classes
+        h3 &mdash; to &mdash;
+        h2 enforce scoping
+
+      section
+        code
+          pre.
+            const heading = css({
+              fontFamily: 'Comic Sans MS',
+              color: 'blue'
+            })
+
+            document.body.innerHTML = `
+              &lt;h1 class="${heading}"&gt;
+                Hello World!
+              &lt;/h1&gt;
+            `
+
+      section
+        code
+          pre.
+            export const heading = css({
+              fontFamily: 'Comic Sans MS',
+              color: 'blue'
+            })
+
+            ...
+
+            import { heading } from './styles.js'
+
+      section
+        h2 Class scoping
+        h3 &mdash; is now &mdash;
+        h2 automated
+
+      section
+        h2 More maintainable<br /><br />by default
+
+      section
+        h2 BEM is baked in,<br /><br />not opt-in
+
+      section
+        h3 2.
+        h2 Critical CSS
+
+      section
+        h2 Google PageSpeed
+
+      section
+        h2 Inlining styles
+        h3 &mdash; for the &mdash;
+        h2 current page
+
+      section
+        code
+          pre.
+            &lt;head>
+              &lt;style>.heading{...}&lt;/style>
+            &lt;/head>
+            &lt;body>
+              &lt;h1 class="heading">...&lt;/h1>
+              &lt;link rel="stylesheet" ... />
+            &lt;/body>
+
+      section(data-bespoke-backdrop='addyosmani')
+        h2 Critical
+        h3 &mdash; by Addy Osmani &mdash;
+
+      section
+        h2 👍
+
+      section
+        h2 Optional<br /><br />optimisation
+
+      section
+        h2 CSS-in-JS
+        h3 +
+        h2 Server rendering
+
+      section
+        h2 Critical CSS is<br /><br />not just an<br /><br />optimisation
+
+      section
+        h2 CSS-in-JS<br /><br />depends on<br /><br />critical CSS
+
+      section(data-bespoke-backdrop='aphrodite')
+        h2 Aphrodite
+        h3 &mdash; from Khan Academy &mdash;
+
+      section
+        code
+          pre.
+            import { StyleSheet, css } from 'aphrodite'
+
+            const styles = StyleSheet.create({
+              heading: { color: 'blue' }
+            })
+
+            const Heading = ({ children }) => (
+              &lt;h1 className={css(styles.heading)}&gt;
+                { children }
+              &lt;/h1&gt;
+            )
+
+      section
+        code
+          pre.
+            import { StyleSheetServer } from 'aphrodite'
+
+            const { html, css } = StyleSheetServer.renderStatic(
+              () => ReactDOMServer.renderToString(&lt;App /&gt;)
+            )
+
+      section
+        code
+          pre.
+            const criticalCSS = `
+              &lt;style data-aphrodite&gt;
+                ${css.content}
+              &lt;/style&gt;
+            `
+
+      section
+        code
+          pre.
+            const appHtml = `
+              &lt;div id="root"&gt;
+                ${html}
+              &lt;/div&gt;
+            `
+
+      section
+        h2 Built for<br /><br />progressive<br /><br />enhancement
+
+      section
+        h2 Critical CSS is built in,<br /><Br />not opt-in
+
+      section
+        h3 3.
+        h2 Smarter Optimisations
+
+      section
+        h2 Reducing CSS bundle
+        h3 &mdash; to the &mdash;
+        h2 absolute minimum?
+
+      section(data-bespoke-backdrop='mrmrs')
+        h2 Tachyons
+        h3 &mdash; by Adam Morse &mdash;
+
+      section
+        code
+          pre.
+            &lt;div class="dib f5 f4-ns fw6 mt0 mb1 link black-70"&gt;
+              Tachyons
+            &lt;/a&gt;
+
+      section(data-bespoke-backdrop='atomic')
+        h2 Atomic CSS
+        h3 &mdash; from Yahoo &mdash;
+
+      section
+        code
+          pre.
+            &lt;div class="Bgc(#0280ae.5) C(#fff) P(20px)"&gt;
+              Atomic CSS
+            &lt;/div&gt;
+
+      section
+        h2 Treating classes<br /><br />like inline styles
+
+      section
+        h2 👍 / 👎
+
+      section
+        code
+          pre.
+            &lt;aside className={styles.sidebar} /&gt;
+
+      section(data-bespoke-backdrop='ryantsao')
+        h2 Styletron
+        h3 &mdash; by Ryan Tsao &mdash;
+
+      section
+        h2 Dynamic, zero config<br /><br />atomic CSS
+
+      section(data-bespoke-backdrop='static styletron-virtual-classes')
+
+      section
+        code
+          pre.
+            import styletron from 'styletron'
+
+            styletron.injectDeclaration({
+              prop: 'color',
+              val: 'red',
+              media: '(min-width: 800px)'
+            })
+
+            // → 'a'
+
+      section
+        code
+          pre.
+            import { injectStyle } from 'styletron-utils';
+
+            injectStyle(styletron, {
+              color: 'red',
+              display: 'inline-block'
+            });
+            // → 'a d'
+
+            injectStyle(styletron, {
+              color: 'red',
+              fontSize: '1.6em'
+            });
+            // → 'a e'
+
+      section(data-bespoke-backdrop='static styletron-size-airbnb')
+
+      section
+        h2 Atomic CSS is baked in,<br /><br />not opt-in
+
+      section
+        h3 4.
+        h2 Package Management
+
+      section
+        h2 How do we share CSS?
+
+      section(data-bespoke-backdrop='bower')
+        h2 Bower?
+
+      section
+        h2 Manual CSS inclusion
+
+      section
+        h2 Not coupled
+        h3 &mdash; to a &mdash;
+        h2 module system
+
+      section
+        h2 Dependencies
+        h3 &mdash; of &mdash;
+        h2 Dependencies?
+
+      section(data-bespoke-backdrop='static npm-vs-bower')
+
+      section
+        h2 Monolithic dependencies
+
+      section
+        h2 Package manager
+        h3 &mdash; for &mdash;
+        h2 CSS / Sass / Less?
+
+      section
+        h2 What if we used<br /><br />JavaScript &amp; npm?
+
+      section(data-bespoke-backdrop='maxandnik')
+        h2 ${✨}<br /><br />polished
+        h3 &mdash; by Max Stoiber &amp; Nik Graf &mdash;
+
+      section
+        h2 The Lodash of CSS-in-JS
+
+      section
+        h3(style='font-size: 18px; width: 600px') clearFix, ellipsis, fontFace, hiDPI, hideText, normalize, placeholder, radialGradient, retinaImage, selection, timingFunctions, wordWrap, adjustHue, complement, darken, desaturate, grayscale, hsl, hsla, invert, lighten, mix, opacify, parseToHsl, parseToRgb, rgb, rgba, saturate, setHue, setLightness, setSaturation, shade, tint, transparentize, animation, backgroundImages, backgrounds, borderColor, borderRadius, borderStyle, borderWidth, buttons, margin, padding, position, size, textInputs, transitions, directionalProperty, em, modularScale, rem, stripUnit, Ratio, RgbColor, RgbaColor, HslColor, HslaColor, FontFaceConfiguration, RadialGradientConfiguration, TimingFunction, AnimationProperty, ButtonState, InputState, toColorString, PointingDirection
+
+      section
+        h2 Exponential growth in<br /><br />open source CSS?
+
+      section
+        h2 JavaScript modules
+
+      section
+        h3 5.
+        h2 Non-browser Styling
+
+      section(data-bespoke-backdrop='static react')
+
+      section
+        h2 <strike>DOM Mutation</strike><br /><br />Virtual DOM
+
+      section
+        code
+          pre.
+            import { render } from 'react-dom';
+
+      section
+        h2 Different<br /><br />renderers
+
+      section
+        h2 Virtual <strike>DOM</strike> whatever
+
+      section(data-bespoke-backdrop='iphone')
+        h2 react-native
+
+      section
+        code
+          pre.
+            var styles = StyleSheet.create({
+              container: {
+                borderRadius: 4,
+                borderWidth: 0.5,
+                borderColor: '#d6d7da',
+              },
+              title: {
+                fontSize: 19,
+                fontWeight: 'bold',
+              },
+              activeTitle: {
+                color: 'red',
+              }
+            });
+
+      section
+        code
+          pre.
+            var styles = StyleSheet.create({
+              container: {
+                display: 'flex'
+              }
+            });
+
+      section
+        h2 css-layout
+
+      //- section(data-bespoke-backdrop='yoga')
+      //-   h2 Yoga
+      //-   h3 &mdash; from Facebook &mdash;
+
+      section(data-bespoke-backdrop='static yoga-site')
+
+      section(data-bespoke-backdrop='yoga-text')
+        h2(style='width: 800px; text-align: left; line-height: 60px; text-transform: none; letter-spacing: 0') &ldquo;Yoga is an open-source, cross-platform layout library that implements Flexbox&hellip;
+
+      section(data-bespoke-backdrop='yoga-text')
+        h2(style='width: 800px; text-align: left; line-height: 60px; text-transform: none; letter-spacing: 0') Yoga’s focus is on creating an expressive layout library, not implementing all of CSS.&rdquo;
+
+      section
+        h2
+          strike Table layouts
+          br
+          br
+          strike Floats
+          br
+          br
+          span Flexbox
+
+      section
+        h2
+          strike Cascade
+          br
+          br
+          span Scoped styles
+
+      section
+        h2 Cross-platform components
+        h3 &mdash; with &mdash;
+        h2 embedded styles?
+
+      section(data-bespoke-backdrop='necolas')
+        h2 react-native-web
+        h3 &mdash; by Nicolas Gallagher &mdash;
+
+      section
+        code
+          pre.
+            resolve: {
+              alias: {
+                'react-native': 'react-native-web'
+              }
+            }
+
+      section
+        code
+          pre.
+            import { renderToString } from 'react-dom/server'
+            import ReactNative, { AppRegistry } from 'react-native'
+
+            AppRegistry.registerComponent('App', () => App)
+
+            const {
+              element,
+              stylesheet
+            } = AppRegistry.getApplication('App')
+
+            const initialHTML = renderToString(element)
+
+      section(data-bespoke-backdrop='lelandrichardson')
+        h2 react-primitives
+        h3 &mdash; by Leland Richardson &mdash;
+
+      section
+        h2 Can we take our<br /><br />components<br /><br />even further?
+
+      section(data-bespoke-backdrop='jongold')
+        h2 react-sketchapp
+        h3 &mdash; by Jon Gold &mdash;
+
+      section(data-bespoke-backdrop='static react-sketchapp')
+
+      section(data-bespoke-backdrop='react-sketchapp-video')
+        video(src=require('./videos/react-sketchapp.mp4'), width='100%', height='100%', autoplay=true, loop=true)
+
+      section
+        h2 Cross-platform,<br /><br />cross-disciplinary<br /><br />design systems
+
+      section
+        h2 Taking CSS where<br /><br />it&rsquo;s never been before
+
+      section
+        ul
+          li Integrated tooling
+          li Cross-platform styling
+          li Best practices baked in
+          li Without breaking the web
+          li Static HTML, CSS, unobtrusive JavaScript
+          li Design systems of the future
+
+      section
+        h2.single-words A unified styling language
+
+      section
+        h2 &ldquo;Just learn CSS&rdquo;
+
+      section
+        .avatar
+
+      section
+
+    script(src='/index.js')
+
+    if process.env.NODE_ENV !== 'production'
+      script(src='/webpack-dev-server.js')

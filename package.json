@@ -1,0 +1,51 @@
+{
+  "private": true,
+  "name": "bespoke-webpack-boilerplate",
+  "version": "1.0.0",
+  "description": "Bespoke.js boilerplate powered by Webpack",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=development webpack-dev-server --content-base dist/",
+    "test": "npm run build",
+    "build": "rm -rf dist/* && NODE_ENV=production webpack",
+    "deploy": "npm run build && gh-pages dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/markdalgleish/bespoke-webpack-boilerplate"
+  },
+  "author": "Mark Dalgleish",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/markdalgleish/bespoke-webpack-boilerplate/issues"
+  },
+  "homepage": "https://github.com/markdalgleish/bespoke-webpack-boilerplate",
+  "devDependencies": {
+    "autoprefixer": "^6.3.6",
+    "babel-core": "^6.4.0",
+    "babel-loader": "^6.2.1",
+    "babel-preset-es2015": "^6.3.13",
+    "bespoke": "^1.1.0",
+    "bespoke-backdrop": "^1.0.0",
+    "bespoke-bullets": "^1.1.0",
+    "bespoke-hash": "^1.0.2",
+    "bespoke-keys": "^1.1.0",
+    "bespoke-progress": "^1.0.0",
+    "bespoke-scale": "^1.0.1",
+    "bespoke-theme-nebula": "^1.0.1",
+    "bespoke-touch": "^1.0.0",
+    "css-loader": "^0.23.1",
+    "file-loader": "^0.8.5",
+    "gh-pages": "^0.11.0",
+    "ignore-loader": "^0.1.1",
+    "postcss-loader": "^0.9.1",
+    "pug-html-loader": "^1.0.5",
+    "pug-loader": "^2.3.0",
+    "static-site-generator-webpack-plugin": "^1.3.0",
+    "style-loader": "^0.13.1",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^2.1.0",
+    "webpack": "^1.12.2",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
