@@ -1,6 +1,6 @@
-# bespoke-webpack-boilerplate
+# A Unified Styling Language
 
-[Bespoke.js](https://github.com/bespokejs/bespoke) boilerplate powered by [Webpack](https://webpack.github.io), featuring:
+[Bespoke.js](https://github.com/bespokejs/bespoke) presentation powered by [Webpack](https://webpack.github.io), featuring:
 - [Babel](https://babeljs.io) for modern JS
 - [Pug](https://github.com/pugjs/pug) for HTML
 - [Stylus](http://stylus-lang.com) for CSS
