@@ -1,3 +1,4 @@
+var webpack = require('webpack');
 var StaticSiteGeneratorPlugin = require('static-site-generator-webpack-plugin');
 var autoprefixer = require('autoprefixer');
 
@@ -7,8 +8,7 @@ module.exports = [
 
     output: {
       filename: 'index.js',
-      path: 'dist',
-      publicPath: '/'
+      path: 'dist'
     },
 
     module: {
@@ -31,7 +31,6 @@ module.exports = [
     output: {
       filename: 'render.js',
       path: 'dist',
-      publicPath: '/',
       libraryTarget: 'umd'
     },
 
@@ -45,6 +44,7 @@ module.exports = [
     },
 
     plugins: [
+      new webpack.DefinePlugin({ 'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV) }),
       new StaticSiteGeneratorPlugin('render.js', ['/'], {})
     ]
   }

@@ -8,7 +8,7 @@
     "start": "NODE_ENV=development webpack-dev-server --content-base dist/",
     "test": "npm run build",
     "build": "rm -rf dist/* && NODE_ENV=production webpack",
-    "deploy": "npm run build && gh-pages dist"
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
