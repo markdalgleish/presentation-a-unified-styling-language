@@ -42,7 +42,7 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -88,9 +88,9 @@
 
 	_bespoke2.default.from('article', [(0, _bespokeThemeNebula2.default)(), (0, _bespokeKeys2.default)(), (0, _bespokeTouch2.default)(), (0, _bespokeBullets2.default)('ul:not(.no-bullets) li, .bullet'), (0, _bespokeBackdrop2.default)(), (0, _bespokeScale2.default)(), (0, _bespokeHash2.default)(), (0, _bespokeProgress2.default)()]);
 
-/***/ },
+/***/ }),
 /* 1 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	var from = function(opts, plugins) {
 	  var parent = (opts.parent || opts).nodeType === 1 ? (opts.parent || opts) : document.querySelector(opts.parent || opts),
@@ -170,9 +170,9 @@
 	};
 
 
-/***/ },
+/***/ }),
 /* 2 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	var require;var require;/*!
 	 * bespoke-theme-nebula v1.0.1
@@ -260,9 +260,9 @@
 	(1)
 	});
 
-/***/ },
+/***/ }),
 /* 3 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports = function(options) {
 	  return function(deck) {
@@ -285,9 +285,9 @@
 	};
 
 
-/***/ },
+/***/ }),
 /* 4 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports = function(options) {
 	  return function(deck) {
@@ -318,9 +318,9 @@
 	};
 
 
-/***/ },
+/***/ }),
 /* 5 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports = function(options) {
 	  return function(deck) {
@@ -394,9 +394,9 @@
 	};
 
 
-/***/ },
+/***/ }),
 /* 6 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports = function() {
 	  return function(deck) {
@@ -451,9 +451,9 @@
 	};
 
 
-/***/ },
+/***/ }),
 /* 7 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports = function(options) {
 	  return function(deck) {
@@ -502,12 +502,19 @@
 	};
 
 
-/***/ },
+/***/ }),
 /* 8 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports = function() {
 	  return function(deck) {
+	    var activateSlide = function(index) {
+	      var indexToActivate = -1 < index && index < deck.slides.length ? index : 0;
+	      if (indexToActivate !== deck.slide()) {
+	        deck.slide(indexToActivate);
+	      }
+	    };
+
 	    var parseHash = function() {
 	      var hash = window.location.hash.slice(1),
 	        slideNumberOrName = parseInt(hash, 10);
@@ -517,7 +524,7 @@
 	          activateSlide(slideNumberOrName - 1);
 	        } else {
 	          deck.slides.forEach(function(slide, i) {
-	            if (slide.getAttribute('data-bespoke-hash') === hash) {
+	            if (slide.getAttribute('data-bespoke-hash') === hash || slide.id === hash) {
 	              activateSlide(i);
 	            }
 	          });
@@ -525,18 +532,11 @@
 	      }
 	    };
 
-	    var activateSlide = function(index) {
-	      var indexToActivate = -1 < index && index < deck.slides.length ? index : 0;
-	      if (indexToActivate !== deck.slide()) {
-	        deck.slide(indexToActivate);
-	      }
-	    };
-
 	    setTimeout(function() {
 	      parseHash();
 
 	      deck.on('activate', function(e) {
-	        var slideName = e.slide.getAttribute('data-bespoke-hash');
+	        var slideName = e.slide.getAttribute('data-bespoke-hash') || e.slide.id;
 	        window.location.hash = slideName || e.index + 1;
 	      });
 
@@ -546,9 +546,9 @@
 	};
 
 
-/***/ },
+/***/ }),
 /* 9 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	module.exports = function(options) {
 	  return function (deck) {
@@ -568,9 +568,9 @@
 	};
 
 
-/***/ },
+/***/ }),
 /* 10 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
@@ -584,8 +584,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/postcss-loader/index.js!./../../node_modules/stylus-loader/index.js!./slides.styl", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/postcss-loader/index.js!./../../node_modules/stylus-loader/index.js!./slides.styl");
+			module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/postcss-loader/index.js!../../node_modules/stylus-loader/index.js!./slides.styl", function() {
+				var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/postcss-loader/index.js!../../node_modules/stylus-loader/index.js!./slides.styl");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -594,9 +594,9 @@
 		module.hot.dispose(function() { update(); });
 	}
 
-/***/ },
+/***/ }),
 /* 11 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(12)();
 	// imports
@@ -608,9 +608,9 @@
 	// exports
 
 
-/***/ },
+/***/ }),
 /* 12 */
-/***/ function(module, exports) {
+/***/ (function(module, exports) {
 
 	/*
 		MIT License http://www.opensource.org/licenses/mit-license.php
@@ -664,159 +664,159 @@
 	};
 
 
-/***/ },
+/***/ }),
 /* 13 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "a6c6d5d12ee6e3e025f8e98e63fc77d2.jpg";
 
-/***/ },
+/***/ }),
 /* 14 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "37fe8322b169ddbdeabf75930e886ac6.png";
 
-/***/ },
+/***/ }),
 /* 15 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "0a5997a03d9db9dcdc6195c9db708889.png";
 
-/***/ },
+/***/ }),
 /* 16 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "066f6315228f407a57fc0e2f8812b020.jpg";
 
-/***/ },
+/***/ }),
 /* 17 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "c54f9759112b471178dfd6bf061ceea4.jpg";
 
-/***/ },
+/***/ }),
 /* 18 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "190d3cd66194afe3a21841d842a1a84a.png";
 
-/***/ },
+/***/ }),
 /* 19 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "ff3680c6a5497257a8257f445de5da10.jpg";
 
-/***/ },
+/***/ }),
 /* 20 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "08b2bd13231180f25f7d046c20134a97.jpg";
 
-/***/ },
+/***/ }),
 /* 21 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "207f4426e098a6a0f63079727d322c98.jpg";
 
-/***/ },
+/***/ }),
 /* 22 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "85d1748c74ad54b9fc4bdde79c043c04.jpg";
 
-/***/ },
+/***/ }),
 /* 23 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "9b4567ecc2994239b31c8c8e66b76cb6.jpg";
 
-/***/ },
+/***/ }),
 /* 24 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "3bdbe68dc255934783ca58008fea82b4.jpg";
 
-/***/ },
+/***/ }),
 /* 25 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "5873a17687cb382dae8a8e6324d42ec9.svg";
 
-/***/ },
+/***/ }),
 /* 26 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "c4dae2fdc0d78f54fd04e0a7042a3da1.svg";
 
-/***/ },
+/***/ }),
 /* 27 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "44a46b10721fa7af788b990c89ce30bf.svg";
 
-/***/ },
+/***/ }),
 /* 28 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "2d3aec20848f579a8afaa01029a78834.png";
 
-/***/ },
+/***/ }),
 /* 29 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "008197ab51a8a49471044b7709d53c70.jpg";
 
-/***/ },
+/***/ }),
 /* 30 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "5417e5b919d85a8aab6287cc8dd5ce9e.jpg";
 
-/***/ },
+/***/ }),
 /* 31 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "701f2a47244be386e38b10faee2227f1.jpg";
 
-/***/ },
+/***/ }),
 /* 32 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "8dc3fac4009263f7f3ed80e8257924a0.jpg";
 
-/***/ },
+/***/ }),
 /* 33 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "5cf89db9bede2776bac2f68b29879013.jpg";
 
-/***/ },
+/***/ }),
 /* 34 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "2f5cb6216556f3ad973d40d442da3a21.png";
 
-/***/ },
+/***/ }),
 /* 35 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "b62b3d7ccd4eea112a5e29b1e2f36e0a.svg";
 
-/***/ },
+/***/ }),
 /* 36 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "97586a74d8117bf0407a0ef75a06ddbf.jpg";
 
-/***/ },
+/***/ }),
 /* 37 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "229bb91abb73af6d6cb8f8937ef1976b.png";
 
-/***/ },
+/***/ }),
 /* 38 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 	/*
 		MIT License http://www.opensource.org/licenses/mit-license.php
@@ -831,7 +831,7 @@
 			};
 		},
 		isOldIE = memoize(function() {
-			return /msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase());
+			return /msie [6-9]\b/.test(self.navigator.userAgent.toLowerCase());
 		}),
 		getHeadElement = memoize(function () {
 			return document.head || document.getElementsByTagName("head")[0];
@@ -1066,5 +1066,5 @@
 	}
 
 
-/***/ }
+/***/ })
 /******/ ]);
