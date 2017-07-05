@@ -12,13 +12,21 @@ html
       section
         .avatar
 
-      section
-        h2 1999
+      //- section
+      //-   h2 1999
 
-      section
-        h2 I ❤ CSS
+      //- section
+      //-   h2 I ❤ CSS
 
       section(data-bespoke-backdrop='static react')
+
+      section
+        h2 Component systems
+        h3 &mdash; &amp; &mdash;
+        h2 Progressive enhancement
+
+      section(data-bespoke-backdrop='houston-video')
+        video(src=require('./videos/houston-minus-js.m4v'), width='100%', height='100%', autoplay=true, loop=true)
 
       section.css-modules-logo.
         <svg id="svg2" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="1e3" viewBox="0 0 1000 1000" width="1e3" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
@@ -42,19 +50,11 @@ html
       section
         h1 CSS-in-JS
 
-      section
-        h2 &ldquo;Just learn CSS&rdquo;
-
-      section
-        h2 Misunderstood<br /><br />communities
-
-      section
-        h2 Component systems
-        h3 &mdash; &amp; &mdash;
-        h2 Progressive enhancement
-
-      section(data-bespoke-backdrop='houston-video')
-        video(src=require('./videos/houston-minus-js.m4v'), width='100%', height='100%', autoplay=true, loop=true)
+      //- section
+      //-   h2 &ldquo;Just learn CSS&rdquo;
+      //-
+      //- section
+      //-   h2 Misunderstood<br /><br />communities
 
       section
         h2 I&rsquo;m very interested<br /><br />in CSS-in-JS
@@ -178,7 +178,7 @@ html
         code
           pre.
             document.body.innerHTML = `
-              &lt;h1 class="${<em>classes.heading</em>}">Hello CSSConf EU!&lt;/h1>
+              &lt;h1 class="${<em>classes.heading</em>}">Hello JSHeroes!&lt;/h1>
             `
 
       section
@@ -204,28 +204,25 @@ html
 
             export default <em>injectSheet(styles)(Button)</em>
 
-      section
-        h2 &ldquo;Separating concerns?&rdquo;
-
-      section
-        code
-          pre.
-            <em>export default</em> {
-              <em>button</em>: {
-                background: props => props.color
-              },
-              <em>label</em>: {
-                fontWeight: 'bold'
-              }
-            }
-
-      section
-        code
-          pre.
-            <em>import</em> styles <em>from</em> './Button.styles.js'
-
-      section
-        h2 Styles passed around<br /><br />like regular code
+      //- //- section
+      //- //-   h2 &ldquo;Separating concerns?&rdquo;
+      //- //-
+      //- //- section
+      //- //-   code
+      //- //-     pre.
+      //- //-       <em>export default</em> {
+      //- //-         <em>button</em>: {
+      //- //-           background: props => props.color
+      //- //-         },
+      //- //-         <em>label</em>: {
+      //- //-           fontWeight: 'bold'
+      //- //-         }
+      //- //-       }
+      //-
+      //- section
+      //-   code
+      //-     pre.
+      //-       <em>import</em> styles <em>from</em> './Button.styles.js'
 
       section
         h2 Component scoping
@@ -233,7 +230,10 @@ html
         h2 automated
 
       section
-        h2 Atomic design
+        h2 Styles passed around<br /><br />like regular code
+
+      //- section
+      //-   h2 Atomic design
 
       section
         h2 BEM is baked in,<br /><br />not opt-in
@@ -261,8 +261,8 @@ html
         h3 2.
         h2 Critical CSS
 
-      section
-        h2 👋 Patrick Hamann
+      //- section
+      //-   h2 👋 Patrick Hamann
 
       section
         h2 Google PageSpeed
@@ -291,10 +291,10 @@ html
         h2 👍
 
       section
-        h2 Optional<br /><br />optimisation
+        h2 Hard to maintain<br /><br />hard to automate
 
       section
-        h2 &ldquo;Hard to maintain<br /><br />hard to automate&rdquo;<br /><br />&mdash; Patrick Hamann
+        h2 Optional<br /><br />optimisation
 
       section
         h2 CSS-in-JS
@@ -500,6 +500,13 @@ html
         h2 We share HTML-in-JS
 
       section
+        ul.no-bullets
+          li jQuery plugins
+          li Backbone views
+          li Angular directives
+          li React components
+
+      section
         h2 What if we shared CSS<br /><br />via JavaScript &amp; npm?
 
       section
@@ -521,7 +528,7 @@ html
 
       section(data-bespoke-backdrop='maxandnik')
         h2 ${✨}<br /><br />polished
-        h3 &mdash; by Max Stoiber &amp; Nik Graf &mdash;
+        h3 &mdash; by Max Stoiber, Nik Graf &amp; Brian Hough &mdash;
 
       section
         h2 The Lodash of CSS-in-JS
@@ -549,10 +556,10 @@ html
             import { <em>render</em> } from <em>'react-dom'</em>
 
       section
-        h2 Different<br /><br />renderers
+        h2 Virtual <strike>DOM</strike> whatever
 
       section
-        h2 Virtual <strike>DOM</strike> whatever
+        h2 Different<br /><br />renderers
 
       section(data-bespoke-backdrop='iphone')
         h2 react-native
@@ -688,7 +695,7 @@ html
 
             <em>&lt;PageBlock>
               &lt;Card>
-                &lt;Text heading></em>Hello CSSConf EU!<em>&lt;/Text>
+                &lt;Text heading></em>Hello JSHeroes!<em>&lt;/Text>
               &lt;/Card>
             &lt;/PageBlock></em>
 
@@ -697,8 +704,8 @@ html
 
       section
 
-      section
-        h2 &ldquo;Just learn CSS&rdquo;
+      //- section
+      //-   h2 &ldquo;Just learn CSS&rdquo;
 
       section
         h2 We&rsquo;re not done yet
@@ -711,7 +718,10 @@ html
           li Making developers happy!
 
       section
-        h2 🦄
+        h2 Misunderstood<br /><br />communities
+
+      section
+        h2 &ldquo;Just learn CSS&rdquo;
 
       section
         .avatar
