@@ -178,7 +178,7 @@ html
         code
           pre.
             document.body.innerHTML = `
-              &lt;h1 class="${<em>classes.heading</em>}">Hello CSSConf EU!&lt;/h1>
+              &lt;h1 class="${<em>classes.heading</em>}">Hello MelbCSS!&lt;/h1>
             `
 
       section
@@ -225,6 +225,31 @@ html
             <em>import</em> styles <em>from</em> './Button.styles.js'
 
       section
+        h2 Co-located styles
+        h3 &mdash; for &mdash;
+        h2 Component-oriented CSS
+
+      section(data-bespoke-backdrop='styled-components')
+        h2(style='font-size: 80px') 💅
+        h2 styled-components
+        h3 &mdash; by Glen Maddern &amp; Max Stoiber &mdash;
+
+      section
+        code
+          pre.
+            import styled from 'styled-components'
+
+            const <em>Title</em> = styled.h1`
+              <em>font-family: Comic Sans MS;
+              color: blue;
+            `</em>
+
+      section
+        code
+          pre.
+            <em>&lt;Title></em>Hello World!<em>&lt;/Title></em>
+
+      section
         h2 Styles passed around<br /><br />like regular code
 
       section
@@ -261,8 +286,8 @@ html
         h3 2.
         h2 Critical CSS
 
-      section
-        h2 👋 Patrick Hamann
+      //- section
+      //-   h2 👋 Patrick Hamann
 
       section
         h2 Google PageSpeed
@@ -294,7 +319,7 @@ html
         h2 Optional<br /><br />optimisation
 
       section
-        h2 &ldquo;Hard to maintain<br /><br />hard to automate&rdquo;<br /><br />&mdash; Patrick Hamann
+        h2 &ldquo;Hard to maintain<br /><br />hard to automate&rdquo;
 
       section
         h2 CSS-in-JS
@@ -521,7 +546,7 @@ html
 
       section(data-bespoke-backdrop='maxandnik')
         h2 ${✨}<br /><br />polished
-        h3 &mdash; by Max Stoiber &amp; Nik Graf &mdash;
+        h3 &mdash; by Max Stoiber, Nik Graf &amp; Brian Hough &mdash;
 
       section
         h2 The Lodash of CSS-in-JS
@@ -688,7 +713,7 @@ html
 
             <em>&lt;PageBlock>
               &lt;Card>
-                &lt;Text heading></em>Hello CSSConf EU!<em>&lt;/Text>
+                &lt;Text heading></em>Hello MelbCSS!<em>&lt;/Text>
               &lt;/Card>
             &lt;/PageBlock></em>
 
