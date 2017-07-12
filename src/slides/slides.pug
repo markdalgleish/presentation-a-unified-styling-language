@@ -178,13 +178,16 @@ html
         code
           pre.
             document.body.innerHTML = `
-              &lt;h1 class="${<em>classes.heading</em>}">Hello JSHeroes!&lt;/h1>
+              &lt;h1 class="${<em>classes.heading</em>}">Hello MelbJS!&lt;/h1>
             `
 
       section
         h2 Scoped CSS
         h3 &mdash; &amp; &mdash;
         h2 Components
+
+      section
+        h2 Styles passed around<br /><br />like regular code
 
       section
         h2 react-jss
@@ -230,7 +233,27 @@ html
         h2 automated
 
       section
-        h2 Styles passed around<br /><br />like regular code
+        h2 Component<br /><br />oriented<br /><br />styles?
+
+      section(data-bespoke-backdrop='styled-components')
+        h2(style='font-size: 80px') 💅
+        h2 styled-components
+        h3 &mdash; by Glen Maddern &amp; Max Stoiber &mdash;
+
+      section
+        code
+          pre.
+            import styled from 'styled-components'
+
+            const <em>Title</em> = styled.h1`
+              <em>font-family: Comic Sans MS;
+              color: blue;
+            `</em>
+
+      section
+        code
+          pre.
+            <em>&lt;Title></em>Hello World!<em>&lt;/Title></em>
 
       //- section
       //-   h2 Atomic design
@@ -695,7 +718,7 @@ html
 
             <em>&lt;PageBlock>
               &lt;Card>
-                &lt;Text heading></em>Hello JSHeroes!<em>&lt;/Text>
+                &lt;Text heading></em>Hello MelbJS!<em>&lt;/Text>
               &lt;/Card>
             &lt;/PageBlock></em>
 
