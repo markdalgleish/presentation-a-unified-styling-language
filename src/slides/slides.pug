@@ -12,13 +12,13 @@ html
       section
         .avatar
 
-      //- section
-      //-   h2 1999
-
-      //- section
-      //-   h2 I ❤ CSS
-
       section(data-bespoke-backdrop='static react')
+
+      section
+        h2 1999
+
+      section
+        h2 I ❤ CSS
 
       section
         h2 Component systems
@@ -101,9 +101,6 @@ html
             .Block__element--modifier
 
       section
-        h2 Convention
-
-      section
         h2 👍
 
       section
@@ -178,7 +175,7 @@ html
         code
           pre.
             document.body.innerHTML = `
-              &lt;h1 class="${<em>classes.heading</em>}">Hello MelbJS!&lt;/h1>
+              &lt;h1 class="${<em>classes.heading</em>}">Hello Web Directions!&lt;/h1>
             `
 
       section
@@ -236,7 +233,7 @@ html
         h2 Component<br /><br />oriented<br /><br />styles?
 
       section(data-bespoke-backdrop='styled-components')
-        h2(style='font-size: 80px') 💅
+        h2(style='font-size: 60px') 💅
         h2 styled-components
         h3 &mdash; by Glen Maddern &amp; Max Stoiber &mdash;
 
@@ -284,12 +281,6 @@ html
         h3 2.
         h2 Critical CSS
 
-      //- section
-      //-   h2 👋 Patrick Hamann
-
-      section
-        h2 Google PageSpeed
-
       section
         h2 Inlining styles
         h3 &mdash; for the &mdash;
@@ -317,15 +308,9 @@ html
         h2 Hard to maintain<br /><br />hard to automate
 
       section
-        h2 Optional<br /><br />optimisation
-
-      section
         h2 CSS-in-JS
         h3 &mdash; &amp; &mdash;
         h2 Server rendering
-
-      section
-        h2 Critical CSS is<br /><br />not just an<br /><br />optimisation
 
       section
         h2 Server-side<br /><br />CSS-in-JS<br /><br />depends on<br /><br />critical CSS
@@ -378,11 +363,6 @@ html
 
       section
         h2 Built for<br /><br />progressive<br /><br />enhancement
-
-      section
-        h2 Server rendered
-        h3 &mdash; or &mdash;
-        h2 Statically pre-rendered
 
       section
         h2 Critical CSS is built in,<br /><Br />not opt-in
@@ -446,8 +426,6 @@ html
       section
         h2 Dynamic, zero config<br /><br />atomic CSS
 
-      section(data-bespoke-backdrop='static styletron-virtual-classes')
-
       section
         code
           pre.
@@ -461,20 +439,7 @@ html
 
             // → <em>'a'</em>
 
-      section
-        code
-          pre.
-            injectStyle(styletron, {
-              <em>color: 'red',</em>
-              display: 'inline-block'
-            });
-            // → '<em>a</em> d'
-
-            injectStyle(styletron, {
-              <em>color: 'red',</em>
-              fontSize: '1.6em'
-            });
-            // → '<em>a</em> e'
+      section(data-bespoke-backdrop='static styletron-virtual-classes')
 
       section(data-bespoke-backdrop='static styletron-size-airbnb')
 
@@ -487,9 +452,6 @@ html
 
       section
         h2 How do we share CSS?
-
-      section(data-bespoke-backdrop='bower')
-        h2 Bower?
 
       section
         h2 Manual CSS inclusion
@@ -530,7 +492,7 @@ html
           li React components
 
       section
-        h2 What if we shared CSS<br /><br />via JavaScript &amp; npm?
+        h2 What if we shared CSS<br /><br />the exact same way?
 
       section
         h2
@@ -562,9 +524,6 @@ html
       section(data-bespoke-backdrop='static npm-vs-bower')
 
       section
-        h2 JavaScript modules
-
-      section
         h3 5.
         h2 Non-browser Styling
 
@@ -580,9 +539,6 @@ html
 
       section
         h2 Virtual <strike>DOM</strike> whatever
-
-      section
-        h2 Different<br /><br />renderers
 
       section(data-bespoke-backdrop='iphone')
         h2 react-native
@@ -705,46 +661,25 @@ html
           li Unifying
 
       section
-        h2.single-words A unified styling language
+        h2 Without breaking<br /><br />progressive enhancement
 
       section
         code
           pre.
             import {
-              <em>PageBlock,
-              Card,
+              <em>Card,
+              Section,
               Text</em>
             } from 'seek-style-guide/react'
 
-            <em>&lt;PageBlock>
-              &lt;Card>
-                &lt;Text heading></em>Hello MelbJS!<em>&lt;/Text>
-              &lt;/Card>
-            &lt;/PageBlock></em>
+            <em>&lt;Card>
+              &lt;Section>
+                &lt;Text heading></em>Hello Web Directions!<em>&lt;/Text>
+              &lt;/Section>
+            &lt;/Card></em>
 
       section
-        h2 Without breaking<br /><br />progressive enhancement
-
-      section
-
-      //- section
-      //-   h2 &ldquo;Just learn CSS&rdquo;
-
-      section
-        h2 We&rsquo;re not done yet
-
-      section
-        ul.no-bullets
-          li Performance
-          li Extracting static CSS
-          li Targeting CSS Variables
-          li Making developers happy!
-
-      section
-        h2 Misunderstood<br /><br />communities
-
-      section
-        h2 &ldquo;Just learn CSS&rdquo;
+        h2.single-words A unified styling language
 
       section
         .avatar
